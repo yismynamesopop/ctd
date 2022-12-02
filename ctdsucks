@@ -1,4 +1,3 @@
-account_balance = 0
 question10 = input("the fixed deposit rate in singapore have increased to 3.8% do you want to put some money into bank account? \n (1)Yes \n (2)No")
 if question10 == "1":
     principal = float(input('enter the amount you want to deposit from $100-$1000:'))
