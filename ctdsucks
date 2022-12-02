@@ -1,3 +1,7 @@
+import random
+import time
+
+account_balance = 0
 question10 = input("the fixed deposit rate in singapore have increased to 3.8% do you want to put some money into bank account? \n (1)Yes \n (2)No")
 if question10 == "1":
     principal = float(input('enter the amount you want to deposit from $100-$1000:'))
@@ -10,7 +14,7 @@ if question10 == "1":
         if answer10b == "1":
             print('the birthday party cost $100')
             time.sleep(2)
-            account_balance = account_balance - 100
+            account_balance = account_balance - 100 + 300
             print('Your account balance is now $' + str(account_balance))
             answer10c = input('your grandma came over to your birthday party and gave you $250 in cash.\n Do you want to \n (1)spent it with your friends \n (2)save the money:')
             if answer10c == '1':
@@ -40,7 +44,7 @@ if question10 == "1":
     elif answer10a == '2':
         print('good choice! {} have been credited to your account'.format(deposit))
         time.sleep(2)
-        account_balance = account_balance + deposit
+        account_balance = account_balance + deposit + principal
         print('Your account balance is now $' + str(account_balance))
     else:
         print("Invalid Input, Run again\n")
@@ -94,4 +98,5 @@ elif question11 == '2':
 else:
         print("Invalid Input, Run again\n")
         exit()
+
 
