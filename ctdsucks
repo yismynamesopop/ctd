@@ -1,97 +1,100 @@
-question10 = input("the fixed deposit rate in singapore have increased to 3.8% do you want to put somemoney into bank account for 12 months? \n (1)Yes \n (2)No \nANSWER:")
-if question10 =="1":
+import random
+import time
+
+account_balance = 0
+question10 = input("the fixed deposit rate in singapore have increased to 3.8% do you want to put some money into bank account? \n (1)Yes \n (2)No")
+if question10 == "1":
     principal = float(input('enter the amount you want to deposit from $100-$1000:'))
     account_balance = account_balance - principal
-    time = float(input('enter how long do you want to save for?')) 
-    deposit = round((principal*3.8*time)/100,2)
-    answer10a = input("next week is you birthday, do you want to hold a party? \n (1)yes, you will need to draw from your fixed desposit account, \n (2)no")
-        if answer10a == '1':
-            answer10b == input("where do you want to hold your birthday party? \n (1)home, \n (2)chalet)
-        
-            if answer10b == "1":
-                print('the birthday party cost $100')
-                time.sleep(2)
-                account_balance = account_balance - 100
-                print('Your account balance is now $'+ str(account_balance))
-                answer10c = input('your grandma came over to your birthday party and gave you $250 in cash.\n Do you want to \n (1)spent it with your friends \n (2)save the money:')
-                    if answer10c == '1':
-                        print('you went out with friends for a meal and a movie you spent all the $250 given')
-                        time.sleep(2)
-                        account_balance = account_balance 
-                        print('Your account balance is now $'+ str(account_balance))
-                    elif answer10c == '2':
-                        print('well done! you now have an additional $250 in your account')
-                        time.sleep(2)
-                        account_balance = account_balance + 250
-                        print('Your account balance is now $'+ str(account_balance))
-                    else:
-                        print("Invalid Input, Run again\n")
-                        exit()
-                        
-            elif answer10b == '2':
-                print('the birthday party cost $500')
-                time.sleep(2)
-                account_balance = account_balance - 500
-                print('Your account balance is now $'+ str(account_balance))
-        
-            else:
-                print("Invalid Input, Run again\n")
-                exit()
-        
-        elif answer10a == '2':
-            print('good choice! {} have been credited to your account'.format(deposit))
+    time = float(input('enter how many months do you wish to save for ?'))
+    deposit = round((principal * 3.8 * time) / 100, 2)
+    answer10a = input("next week is you birthday, do you want to hold a party? \n (1)yes, you will need to draw from your fixed deposit account, \n (2)no")
+    if answer10a == '1':
+        answer10b = input("where do you want to hold your birthday party? \n (1)home, \n (2)chalet")
+        if answer10b == "1":
+            print('the birthday party cost $100')
             time.sleep(2)
-            account_balance = account_balance + deposit
-            print('Your account balance is now $'+ str(account_balance))
+            account_balance = account_balance - 100
+            print('Your account balance is now $' + str(account_balance))
+            answer10c = input('your grandma came over to your birthday party and gave you $250 in cash.\n Do you want to \n (1)spent it with your friends \n (2)save the money:')
+            if answer10c == '1':
+                    print('you went out with friends for a meal and a movie you spent all the $250 given')
+                    time.sleep(2)
+                    account_balance = account_balance
+                    print('Your account balance is now $' + str(account_balance))
+            elif answer10c == '2':
+                    print('well done! you now have an additional $250 in your account')
+                    time.sleep(2)
+                    account_balance = account_balance + 250
+                    print('Your account balance is now $' + str(account_balance))
+            else:
+                    print("Invalid Input, Run again\n")
+                    exit()
+
+        elif answer10b == '2':
+            print('the birthday party cost $500')
+            time.sleep(2)
+            account_balance = account_balance - 500
+            print('Your account balance is now $' + str(account_balance))
+
         else:
-           print("Invalid Input, Run again\n")
-           exit()
+            print("Invalid Input, Run again\n")
+            exit()
+
+    elif answer10a == '2':
+        print('good choice! {} have been credited to your account'.format(deposit))
+        time.sleep(2)
+        account_balance = account_balance + deposit
+        print('Your account balance is now $' + str(account_balance))
+    else:
+        print("Invalid Input, Run again\n")
+        exit()
 
 elif question10 == '2':
-    account_balance = account_balance 
-    print('Your account balance is now $'+ str(account_balance))
+    account_balance = account_balance
+    print('Your account balance is now $' + str(account_balance))
 
 else:
-       print("Invalid Input, Run again\n")
-       exit()
+    print("Invalid Input, Run again\n")
+    exit()
 
 question11 = input('you came across a luckydraw and the entry fee is $300 \n 1st price $1000 \n 2nd price $500 \n 3rd price $100 .\nDo you want to give it a try? \n (1)yes \n (2)no')
-    if question11 == '1':
-        account_balance = account_balance - 300
-        print('Your account balance is now $'+ str(account_balance))
-        LD1 = random.randint(1000,9999)
-        LD2 = random.randint(1000,9999)
-        LD3 = random.randint(1000,9999)
-        answer11 = input('please enter 3 random 4 digit number \n first number:')
-        answer12 = input('sencond number:')
-        answer13 = input('third number:')
-            if answer11 or answer12 or answer13 == LD1:
-                print('congratulations, you have won 1st price $1000!')
-                time.sleep(2)
-                account_balance = account_balance + 1000
-                print('Your account balance is now $'+ str(account_balance))
-        
-            elif answer11 or answer12 or answer13 == LD2:
-                print('congratulations, you have won 2nd price $500!')
-                time.sleep(2)
-                account_balance = account_balance + 500
-                print('Your account balance is now $'+ str(account_balance))
-        
-            elif answer11 or answer12 or answer13 == LD3:
-                print('congratulations, you have won 3rd price $100!')
-                time.sleep(2)
-                account_balance = account_balance + 100
-                print('Your account balance is now $'+ str(account_balance))
-        
-            else:
-                print('opps bad luck you won nothing HAHA')
-                time.sleep(2)
-                account_balance = account_balance 
-                print('Your account balance is now $'+ str(account_balance))
-    elif question11 == '2':
-        account_balance = account_balance 
-        print('Your account balance is now $'+ str(account_balance))
-    
+if question11 == '1':
+    account_balance = account_balance - 300
+    print('Your account balance is now $' + str(account_balance))
+    LD1 = random.randint(1000, 9999)
+    LD2 = random.randint(1000, 9999)
+    LD3 = random.randint(1000, 9999)
+    answer11 = input('please enter 3 random 4 digit number \n first number:')
+    answer12 = input('second number:')
+    answer13 = input('third number:')
+    if answer11 or answer12 or answer13 == LD1:
+        print('congratulations, you have won 1st price $1000!')
+        time.sleep(2)
+        account_balance = account_balance + 1000
+        print('Your account balance is now $' + str(account_balance))
+
+    elif answer11 or answer12 or answer13 == LD2:
+        print('congratulations, you have won 2nd price $500!')
+        time.sleep(2)
+        account_balance = account_balance + 500
+        print('Your account balance is now $' + str(account_balance))
+
+    elif answer11 or answer12 or answer13 == LD3:
+        print('congratulations, you have won 3rd price $100!')
+        time.sleep(2)
+        account_balance = account_balance + 100
+        print('Your account balance is now $' + str(account_balance))
+
     else:
-       print("Invalid Input, Run again\n")
-       exit()
+        print('opps bad luck you won nothing HAHA')
+        time.sleep(2)
+        account_balance = account_balance
+        print('Your account balance is now $' + str(account_balance))
+elif question11 == '2':
+        account_balance = account_balance
+        print('Your account balance is now $' + str(account_balance))
+
+else:
+        print("Invalid Input, Run again\n")
+        exit()
