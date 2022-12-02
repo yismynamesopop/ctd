@@ -1,13 +1,11 @@
-import random
-import time
 
 account_balance = 0
 question10 = input("the fixed deposit rate in singapore have increased to 3.8% do you want to put some money into bank account? \n (1)Yes \n (2)No")
 if question10 == "1":
     principal = float(input('enter the amount you want to deposit from $100-$1000:'))
     account_balance = account_balance - principal
-    time = float(input('enter how many months do you wish to save for ?'))
-    deposit = round((principal * 3.8 * time) / 100, 2)
+    duration = float(input('enter how many months do you wish to save for ?'))
+    deposit = round((principal * 3.8 * duration) / 100, 2)
     answer10a = input("next week is you birthday, do you want to hold a party? \n (1)yes, you will need to draw from your fixed deposit account, \n (2)no")
     if answer10a == '1':
         answer10b = input("where do you want to hold your birthday party? \n (1)home, \n (2)chalet")
