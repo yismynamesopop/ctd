@@ -35,10 +35,10 @@ else:
    exit()
 time.sleep(2)
 question2 = input("Your mother askes you to pack your lunch and take it to school or askes you to use your allowance to buy food, \n (1)make yourself a peanut butter sandwhich,\n (2) or spend money on yummy canteen food\n Type in 1 OR 2")
-if question1 == "1":
+if question2 == "1":
    print("Congrats! you saved $4")
    print('Your account balance is now $' + str(account_balance))
-elif question1 == "2":
+elif question2 == "2":
    print("you spend $4 on Nasi Lemak")
    time.sleep(2)
    account_balance= account_balance-4
